@@ -127,21 +127,21 @@ public class PagedDragDropGrid extends HorizontalScrollView implements PagedCont
             gestureScanner = new GestureDetector(getContext(), this);
         }
 
-        setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                boolean specialEventUsed = gestureScanner.onTouchEvent(event);
-                if (!specialEventUsed && (event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL)) {
-                    int scrollX = getScrollX();
-                    int onePageWidth = v.getMeasuredWidth();
-                    int page = ((scrollX + (onePageWidth / 2)) / onePageWidth);
-                    scrollToPage(page);
-                    return true;
-                } else {
-                    return specialEventUsed;
-                }
-            }
-        });
+//        setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                boolean specialEventUsed = gestureScanner.onTouchEvent(event);
+//                if (!specialEventUsed && (event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL)) {
+//                    int scrollX = getScrollX();
+//                    int onePageWidth = v.getMeasuredWidth();
+//                    int page = ((scrollX + (onePageWidth / 2)) / onePageWidth);
+//                    scrollToPage(page);
+//                    return true;
+//                } else {
+//                    return specialEventUsed;
+//                }
+//            }
+//        });
     }
 
     public void setOnPageChangedListener(OnPageChangedListener listener) {
