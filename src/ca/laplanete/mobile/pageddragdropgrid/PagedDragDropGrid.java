@@ -43,6 +43,7 @@ public class PagedDragDropGrid extends HorizontalScrollView implements PagedCont
     private boolean activePageRestored = false;
 
     private DragDropGrid grid;
+    //数据的引用
     private PagedDragDropGridAdapter adapter;
     private OnClickListener listener;
     private GestureDetector gestureScanner;

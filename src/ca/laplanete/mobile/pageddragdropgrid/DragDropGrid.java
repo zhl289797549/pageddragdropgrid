@@ -113,7 +113,6 @@ public class DragDropGrid extends ViewGroup implements OnTouchListener, OnLongCl
 		super(context, attrs, defStyle);
 		init();
 	}
-
 	public DragDropGrid(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
@@ -1069,6 +1068,8 @@ public class DragDropGrid extends ViewGroup implements OnTouchListener, OnLongCl
 		if (weWereMovingDragged()) {
 		    bringDraggedToFront();
 		}
+		
+		deleteZone.layout(0, 1000+deleteZone.getMeasuredWidth(), 0+deleteZone.getMeasuredWidth(),1000+deleteZone.getMeasuredHeight());
 	}
 
 	/**
@@ -1206,7 +1207,7 @@ public class DragDropGrid extends ViewGroup implements OnTouchListener, OnLongCl
         
         int t = computeDropZoneVerticalLocation();
         int b = computeDropZoneVerticalBottom();
-        
+       
         deleteZone.layout(l,  t, l + gridPageWidth, b);
     }
 	
